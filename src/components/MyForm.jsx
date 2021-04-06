@@ -46,7 +46,7 @@ const MyForm = () => {
    return (
       <div className="container">
          <Form onSubmit={handleSubmit} className="mt-5">
-            <h4 className="text-center offset-3 col-4 mb-3">
+            <h4 className="text-center offset-md-3 col-md-4 mb-3">
                Please enter the values
             </h4>
             <div className="row">
