@@ -5,7 +5,7 @@ const MyList = ({ passwords }) => {
    return (
       <div className="container mt-5">
          <div className="row">
-            <div className="offset-3 col-4">
+            <div className="offset-md-3 col-md-4">
                <ListGroup className="text-center">
                   {passwords.map((password) => {
                      return <ListGroupItem key={password}>{password}</ListGroupItem>;

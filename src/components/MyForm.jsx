@@ -50,7 +50,7 @@ const MyForm = () => {
                Please enter the values
             </h4>
             <div className="row">
-               <div className="offset-3 col-4">
+               <div className="offset-md-3 col-md-4">
                   <FormGroup row>
                      <Label className="text-light" for="numberInput" sm={6}>
                         Min Length
