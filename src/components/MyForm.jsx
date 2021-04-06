@@ -17,15 +17,8 @@ const MyForm = () => {
       setCount({ ...count, [event.target.name]: event.target.value });
    };
 
-   const checkInputs = () =>{
-      if (count.minLength <= 0 || count.total <= 0 || count.number < 0 || count.symbol < 0){
-         alert("Please enter some values to the given inputs")
-      }
-   }
-
    const handleSubmit = (event) => {
       event.preventDefault();
-      checkInputs()
       Object.values(count).forEach((item) => {
          if (item > 0) {
             axios
