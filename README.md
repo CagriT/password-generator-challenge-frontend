@@ -12,6 +12,6 @@
  - Netlify for Front end
 
 ### Links
- - [live project](https://my-password-generator.netlify.app/).
- - [Frontend repository](https://github.com/CagriT/password-generator-challenge-frontend).
- - [Backend repository](https://github.com/CagriT/password-generator-challenge-backend).
+ - [live project](https://my-password-generator.netlify.app/)
+ - [Frontend repository](https://github.com/CagriT/password-generator-challenge-frontend)
+ - [Backend repository](https://github.com/CagriT/password-generator-challenge-backend)
