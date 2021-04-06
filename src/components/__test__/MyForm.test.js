@@ -32,12 +32,3 @@ test("input value change", () => {
    userEvent.type(minLength, `${newvalue}`);
    expect(minLength).toHaveValue(newvalue);
 });
-
-test("the inputs return initial value after submit", () => {
-   const minLength = screen.getByLabelText(/min length/i);
-
-   const btn = screen.getByRole("button", { name: /generate password/i });
-   userEvent.click(btn);
-
-   expect(minLength).toHaveValue(0);
-});

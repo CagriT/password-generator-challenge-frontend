@@ -44,13 +44,13 @@ const MyForm = () => {
                .then((res) => {
                   const { result } = res.data.data;
                   setPasswords(result);
-                  setCount({
-                     ...count,
-                     minLength: 0,
-                     number: 0,
-                     symbol: 0,
-                     total: 0,
-                  });
+                  // setCount({
+                  //    ...count,
+                  //    minLength: 0,
+                  //    number: 0,
+                  //    symbol: 0,
+                  //    total: 0,
+                  // });
                });
          }
       });
