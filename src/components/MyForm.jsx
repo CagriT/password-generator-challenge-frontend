@@ -11,6 +11,13 @@ const MyForm = () => {
       total: 0,
    });
 
+   const [invalid, setInvalid] = useState({
+      minLength: false,
+      number: false,
+      symbol: false,
+      total: false,
+   });
+
    const [passwords, setPasswords] = useState([]);
 
    const handleChange = (event) => {
@@ -18,6 +25,12 @@ const MyForm = () => {
    };
 
    const handleSubmit = (event) => {
+      setInvalid({
+         minLength: count.minLength <= 0,
+         number: count.number <= 0,
+         symbol: count.symbol <= 0,
+         total: count.total <= 0,
+      });
       event.preventDefault();
       Object.values(count).forEach((item) => {
          if (item > 0) {
@@ -57,7 +70,7 @@ const MyForm = () => {
                      </Label>
                      <Col sm={6}>
                         <Input
-                           invalid={count.minLength < 0 ? true : false}
+                           invalid={invalid.minLength}
                            value={count.minLength}
                            onChange={handleChange}
                            type="number"
@@ -73,7 +86,7 @@ const MyForm = () => {
                      </Label>
                      <Col sm={6}>
                         <Input
-                           invalid={count.number < 0 ? true : false}
+                           invalid={invalid.number}
                            value={count.number}
                            onChange={handleChange}
                            type="number"
@@ -89,7 +102,7 @@ const MyForm = () => {
                      </Label>
                      <Col sm={6}>
                         <Input
-                           invalid={count.symbol < 0 ? true : false}
+                           invalid={invalid.symbol}
                            value={count.symbol}
                            onChange={handleChange}
                            type="number"
@@ -105,7 +118,7 @@ const MyForm = () => {
                      </Label>
                      <Col sm={6}>
                         <Input
-                           invalid={count.total < 0 ? true : false}
+                           invalid={invalid.total}
                            value={count.total}
                            onChange={handleChange}
                            type="number"
