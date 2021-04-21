@@ -1,7 +1,7 @@
-import { React, useState } from "react";
-import { Form, FormGroup, Label, Input, Col, Button } from "reactstrap";
-import axios from "axios";
-import MyList from "./MyList";
+import { React, useState } from 'react';
+import { Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
+import axios from 'axios';
+import MyList from './MyList';
 
 const MyForm = () => {
    const [count, setCount] = useState({
@@ -25,35 +25,24 @@ const MyForm = () => {
    };
 
    const handleSubmit = (event) => {
+      event.preventDefault();
       setInvalid({
          minLength: count.minLength <= 0,
          number: count.number <= 0,
          symbol: count.symbol <= 0,
          total: count.total <= 0,
       });
-      event.preventDefault();
-      Object.values(count).forEach((item) => {
-         if (item > 0) {
-            axios
-               .post(
-                  `https://password-generator-challenge.herokuapp.com/api/${count.minLength}/${count.number}/${count.symbol}/${count.total}`,
-                  {
-                     count,
-                  }
-               )
-               .then((res) => {
-                  const { result } = res.data.data;
-                  setPasswords(result);
-                  // setCount({
-                  //    ...count,
-                  //    minLength: 0,
-                  //    number: 0,
-                  //    symbol: 0,
-                  //    total: 0,
-                  // });
-               });
-         }
-      });
+      axios
+         .post(
+            `https://password-generator-challenge.herokuapp.com/api/${count.minLength}/${count.number}/${count.symbol}/${count.total}`,
+            {
+               count,
+            }
+         )
+         .then((res) => {
+            const { result } = res.data.data;
+            setPasswords(result);
+         });
    };
 
    return (
