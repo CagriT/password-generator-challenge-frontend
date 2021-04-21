@@ -3,6 +3,7 @@
  
 ### Target
 - to create an API that generates passwords with some conditions
+- to write test function, (i used jest package)
 
 ### to run the project
   - in frontend and backend, please write "npm i" and after that "npm start"
